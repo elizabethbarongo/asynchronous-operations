@@ -1,13 +1,14 @@
-// Define an asynchronous function that takes an email as an input
-// Create a promise use
+// Define a function that takes an email as an input
+// Delay the task of sending the reminder by 5 seconds
+// After the 5 seconds send a message that the reminder was sent
 async function sendReminder(email) {
     await new Promise(resolve => setTimeout(resolve, 5000));
     console.log(`Reminder sent to ${email}`);
 }
 
 sendReminder('elizabethmoraab@gmail.com');
-sendReminder('elizabethmoraab@gmail.com');
-sendReminder('elizabethmoraab@gmail.com');
+sendReminder('josephwainaina@gmail.com');
+sendReminder('matthewkuria@gmail.com');
 
 
 
@@ -59,6 +60,17 @@ const timer = setInterval(() => {
 
 
 // QUESTION FOUR
+
+
+
+
+// QUESTION FIVE
+// Prepare a way to get the stocks price when given it's name(AAPL)
+// Wait 2 seconds to stimulate a delay
+// After wait, create a mesage that says ("Price for that symbol retrieved")
+// Repeat for first stock
+// Print the result after done then get the second stock's price
+// Wait another 2 seconds again to create a message  then print the second result
 function fetchPrice(symbol){
   return new Promise ((resolve) => {
     setTimeout(() => {
@@ -75,10 +87,36 @@ function fetchPrice(symbol){
 
 async function getPrices(){
   const price1= await
+  fetchPrice("AAPL");
+  console.log(price1);
+  const price2 = await
+  fetchPrice("GOOG");
+  console.log(price2);
   
 }
 
+getPrices();
 
+
+// QUSETION FIVE
+// Create a function that will handle the loading process
+// Make a represenation for the job that needs to be done and ensure there is a reminder to indicate when the job is finished
+// Define the amount of time that will be used in milliseconds
+// Wait for the job to be finished
+
+
+
+async function loadPage() {
+  console.log("Loading header...");
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  console.log("Loading content...");
+  await new Promise(resolve => setTimeout(resolve, 2000));
+  console.log("Loading footer...");
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  console.log("Page fully loaded");
+}
+
+loadPage();
 
 
 
